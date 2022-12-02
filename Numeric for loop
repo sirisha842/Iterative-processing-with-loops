@@ -1,0 +1,78 @@
+Numeric FOR LOOP statement – learn how to execute a sequence of statements a fixed number of times.
+set serveroutput on;
+declare
+n number(2) :='&number';
+begin
+for i in 2..N/2 loop
+if i mod n=0 then 
+dbms_output.put_line('Not a prime number');
+exit;
+else
+dbms_output.put_line('Prime number');
+exit;
+end if;
+end loop;
+end;
+
+-n numbers
+set serveroutput on;
+declare
+n number(2) :='&Number';
+begin
+for i in 1..n
+loop
+dbms_output.put_line(i);
+
+end loop;
+end;
+
+
+set serveroutput on;
+declare
+n number(2) :='&NUmber';
+x number:=0;
+begin
+for i in 1..n loop
+dbms_output.put_line(x);
+x:=x+3;
+
+end loop;
+end;
+
+
+set serveroutput on;
+begin
+<<loopi>>
+for i in 1..4 loop
+<<loopj>>
+for j in 1..4 loop
+dbms_output.put_line('i is'||i||' j is '||j);
+exit when j>0;
+end loop loopj;
+
+end loop loopi;
+end;
+
+
+
+
+
+set serveroutput on;
+begin
+for i in 1..10 loop
+if mod(i,2)=0 then continue
+
+dbms_output.put_line('The odd numbers are '||i);
+end if;
+end loop;
+end;
+
+set serveroutput on;
+begin
+for i in 1..10 loop
+if mod(i,2)=0 then 
+continue;
+end if;
+dbms_output.put_line('The odd numbers are '||i);
+end loop;
+end;
