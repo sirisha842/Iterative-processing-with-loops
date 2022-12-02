@@ -1,0 +1,55 @@
+WHILE loop – execute a sequence of statements as long as a specified condition is TRUE.
+
+Set serveroutput on;
+declare
+ a number:='&a';
+begin 
+<<first>>
+ while a < 20  loop  
+    a:=a+1;
+    if a =15 then 
+    a:=a+1;
+    goto first;
+    end if;
+    end loop;
+    end;
+    /
+set serveroutput on;
+declare
+n number(4) :='&Number';
+begin
+dbms_output.put_line('outside the loop '||n);
+
+while n mod 2 =0 loop
+    dbms_output.put_line('Inside the loop');
+    dbms_output.put_line(n);
+    n :=n-2;
+    exit ;
+end loop;
+end;
+
+
+set serveroutput on;
+declare
+a number(8):='&number';
+begin
+while(a > 0) loop 
+a :=a-2;
+dbms_output.put_line('The given number is  '||a);
+if a = 0 then exit ;
+end if;
+end loop;
+end;
+
+
+set serveroutput on;
+begin
+for i in 1..4
+loop
+while i mod 2 = 0 loop
+i : =i+1;
+dbms_output.put_line('i value '||i);
+end loop;
+dbms_output.put_line('i value outside loop2 '||i);
+end loop;
+end;
